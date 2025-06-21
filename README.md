@@ -1,70 +1,117 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🚀 Code Snippet Organizer
 
-## Available Scripts
+A basic web app to organize, store, and manage your code snippets in one place. Built with **React**, styled for simplicity, and powered by **Firebase** for real-time updates and secure data storage.
 
-In the project directory, you can run:
+🌐 **Live Site:** [https://code-snippet-2f542.web.app](https://code-snippet-2f542.web.app)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧩 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 📄 Create and view code snippets
+- 🔍 Search snippets in real time
+- ❤️ Mark snippets as **Favorite**
+- 🗑️ Move snippets to **Trash** (soft delete)
+- 🔄 Real-time updates via **Firestore**
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ⚛️ React (with Hooks & Router)
+- 🔥 Firebase (Firestore + Hosting + Auth)
+- 💅 CSS (custom + minimal utility styles)
+- ☁️ Deployed on Firebase Hosting
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Folder Structure
 
-### `npm run eject`
+```
+src/
+├── components/        # Reusable UI components  
+├── pages/             # Page-Home
+├── functions/         # reuasable functions 
+├── App.js             # App Routing
+└── index.js           # Entry point
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧑‍💻 Local Development Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/code-snippet-organizer.git
+cd code-snippet-organizer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 2. Install dependencies
+npm install
 
-## Learn More
+# 3. Start the local dev server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### ✅ Add this to `firebase.json`
 
-### Code Splitting
+```json
+{
+  "hosting": {
+    "public": "build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Then deploy:
 
-### Analyzing the Bundle Size
+```bash
+npm run build
+firebase deploy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🐞 Known Issue
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> Visiting routes like `/home` directly or refreshing on `/favorites` may show a 404 error **without Firebase rewrites**. Ensure the `"rewrites"` key is added to `firebase.json`.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 Contributing
 
-### Deployment
+Got suggestions or improvements? Feel free to fork the repo, create a branch, and open a pull request!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+# Fork it
+git clone https://github.com/SaiPrasanthVuriti/code-snippet-organiser.git
 
-### `npm run build` fails to minify
+# Create your branch
+git checkout -b feature/my-feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Commit and push
+git commit -m "Added my awesome feature"
+git push origin feature/my-feature
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 📬 Contact
+
+For questions, reach out via GitHub or raise an issue.
